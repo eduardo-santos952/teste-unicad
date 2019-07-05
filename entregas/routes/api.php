@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/entregas', 'ControladorEntrega@index');
+Route::post('/cadastro_entrega', 'ControladorEntrega@store');
+Route::get('/visualizar_entrega/{id}', 'ControladorEntrega@show');
